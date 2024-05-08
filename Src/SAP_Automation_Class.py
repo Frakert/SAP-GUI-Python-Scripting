@@ -103,4 +103,5 @@ class SAP_Automation:
 
 
   def __exit__(self) -> None:
-     self._close_sap()
+      """Exit program that should always run probably."""
+      self._close_sap()
