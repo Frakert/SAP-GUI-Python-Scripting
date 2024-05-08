@@ -10,15 +10,16 @@ sys.path.insert(0, src_folder)
 from SAP_Automation_Class import SAP_Automation
 import pandas as pd
 from time import sleep
+import typing
 
 class M1_LTAP_Automation_Class(SAP_Automation):
 
     def open_transaction(self) -> None:
         session=self.PRD_session
         session.SendCommand("/nIE02")
-        return
+        return None
 
-    def process_transaction(self, row) -> None:
+    def process_transaction(self, row: tuple) -> None:
         """ 
         Void function which fills in a few fields in the IE02 transaction.
         Fills in Equipment cost, currency tool creation date. And 5 LTAP (Z_Equipment) fields.
@@ -79,7 +80,7 @@ class M1_LTAP_Automation_Class(SAP_Automation):
 
 import pandas as pd
 
-LTAP = pd.read_excel("Nout_Z_Equip.xlsx")
+LTAP = pd.read_excel("Nout_Z_Equip.xlsx") # Read file im not giving because of company info
 LTAP.fillna(0,inplace=True)
 LTAP = LTAP.values.tolist()
 
@@ -91,6 +92,8 @@ M1_LTAP.connect_sap()
 M1_LTAP.open_transaction()
 
 print("Processing . . .")
+
+# For every line in excel file, get values, put them into the process_transaction method
 for equip in LTAP:
     # Defenitions
     SAP_Nr = str(int(equip[14]))

@@ -8,10 +8,11 @@ I Created this code as a baseline for SAP automation classes.
 #%% Imports & Definitions
 import win32com.client
 import subprocess 
-from time import sleep
+from time import sleep, strftime
 from getpass import getuser
 import logging
 import time
+import os
 #%% Building a Class
 
 class SAP_Automation:
@@ -28,8 +29,8 @@ class SAP_Automation:
   def __init__(self) -> None:
      """Initialse the class, adds a debug log to the downloads folder"""
      self.user=getuser()
-     now = time.strftime("%Y-%m-%d_%H_%M_%S")
-     logging.basicConfig(filename='C:/Users/'+ self.user + '/Downloads/LTAP' + now + '.log', level=logging.DEBUG,format='%(asctime)s %(levelname)s %(name)s %(message)s')
+     now = strftime("%Y-%m-%d_%H_%M_%S")
+     logging.basicConfig(filename = os.getcwd() + '/Error_Log_' + now + '.log', level=logging.DEBUG,format='%(asctime)s %(levelname)s %(name)s %(message)s')
      self.logger=logging.getLogger(__name__)
      return
   

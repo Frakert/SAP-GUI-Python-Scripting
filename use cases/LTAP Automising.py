@@ -18,7 +18,7 @@ class LTAP_Automation_Class(SAP_Automation):
         session.SendCommand("/nIE02")
         return
 
-    def process_transaction(self, equip_number):
+    def process_transaction(self, equip_number: int) -> None:
         try:
             session=self.PRD_session
 

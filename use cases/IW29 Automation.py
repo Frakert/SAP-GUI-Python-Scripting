@@ -13,11 +13,14 @@ from time import sleep
 
 class IW29_Automation_Class(SAP_Automation):
 
-    def open_transaction(self):
+    def open_transaction(self) -> None:
         self._PRD_session.SendCommand("/nIW29")
         return
         
-    def process_transaction(self):
+    def process_transaction(self) -> None:
+       """
+       Override method for process_transaction
+       """
        session=self._PRD_session
 
        # Select Transaction paramaterss 
