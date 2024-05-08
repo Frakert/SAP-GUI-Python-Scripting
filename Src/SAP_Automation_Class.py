@@ -1,7 +1,6 @@
 """"
 Made by: KLABBF (Freek Klabbers)
 Date: 13-12-2023
-Department: Technical Services - M2 - M&L - Canon Venlo - CPPN - Canon Inc.
 
 I Created this code as a baseline for SAP automation classes.
 """
@@ -19,7 +18,6 @@ class SAP_Automation:
   """"
   Made by: KLABBF (Freek Klabbers)
   Date: 13-12-2023
-  Department: Technical Services - M2 - M&L - Canon Venlo - CPPN - Canon Inc.
 
   A Simple Class that will funcion as a parent class for SAP Automation tasks.
   It will manage the SAP instance and its subwindows and offer standard opperations that could be peformed.

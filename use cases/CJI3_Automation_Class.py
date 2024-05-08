@@ -1,3 +1,12 @@
+import os
+import sys
+
+script_path = os.path.realpath(__file__)
+parent_path = os.path.dirname(script_path)
+main_folder, subfolder = os.path.split(parent_path)
+src_folder = os.path.join(os.path.sep,main_folder,"Src")
+sys.path.insert(0, src_folder)
+
 from SAP_Automation_Class import SAP_Automation
 
 class CJI3_Automation_Class(SAP_Automation):
