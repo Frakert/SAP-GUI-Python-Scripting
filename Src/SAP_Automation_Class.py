@@ -30,7 +30,7 @@ class SAP_Automation:
      """Initialse the class, adds a debug log to the downloads folder"""
      self.user=getuser()
      now = strftime("%Y-%m-%d_%H_%M_%S")
-     logging.basicConfig(filename = os.getcwd() + '/Error_Log_' + now + '.log', level=logging.DEBUG,format='%(asctime)s %(levelname)s %(name)s %(message)s')
+     logging.basicConfig(filename = os.getcwd() + 'Logs\Error_Log_' + now + '.log', level=logging.DEBUG,format='%(asctime)s %(levelname)s %(name)s %(message)s')
      self.logger=logging.getLogger(__name__)
      return
   
